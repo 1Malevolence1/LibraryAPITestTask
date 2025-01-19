@@ -91,9 +91,4 @@ select setval('author_author_id_seq', (select max(author_id) from author));
 select setval('book_book_id_seq', (select max(book_id) from book));
 select setval('reader_reader_id_seq', (select max(reader_id) from reader));
 select setval('transactional_transactional_id_seq', (select max(transactional_id) from transactional));
-SELECT setval('employee_employee_id_seq', (SELECT
-
-SELECT setval('author_author_id_seq', (SELECT MAX(author_id) FROM author));
-SELECT setval('book_book_id_seq', (SELECT MAX(book_id) FROM book));
-SELECT setval('reader_reader_id_seq', (SELECT MAX(reader_id) FROM reader));
-SELECT setval('transactional_transactional_id_seq', (SELECT MAX(transactional_id) FROM transactional));
+SELECT setval('employee_employee_id_seq', (SELECT MAX(employee_id) FROM public.employee));

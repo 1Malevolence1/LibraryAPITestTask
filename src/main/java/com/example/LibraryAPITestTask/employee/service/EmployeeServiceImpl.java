@@ -19,6 +19,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee getUserByEmail(String email) {
-        return employeeRepository.findByEmail(email).orElseThrow(() -> new NoSuchElementException("Not found employee with email::%s".formatted(email)));
+        return employeeRepository.findByEmail(email).orElseThrow(() -> new NoSuchElementException("Неправильная почта или пароль"));
     }
 }
