@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @Builder
 @Setter
 @Getter
+@ToString
 public class Reader {
 
     @Id

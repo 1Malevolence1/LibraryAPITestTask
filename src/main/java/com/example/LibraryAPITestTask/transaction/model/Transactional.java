@@ -1,7 +1,6 @@
 package com.example.LibraryAPITestTask.transaction.model;
 
 
-
 import com.example.LibraryAPITestTask.book.model.Book;
 import com.example.LibraryAPITestTask.reader.model.Reader;
 import jakarta.persistence.*;
@@ -9,7 +8,6 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "transactional", schema = "public")
@@ -18,6 +16,7 @@ import java.util.List;
 @Builder
 @Setter
 @Getter
+@ToString
 public class Transactional {
 
     @Id
@@ -37,7 +36,7 @@ public class Transactional {
 
     @ManyToOne()
     @JoinColumn(name = "reader_id")
-    private  Reader reader;
+    private Reader reader;
 
     @ManyToOne()
     @JoinColumn(name = "book_id")

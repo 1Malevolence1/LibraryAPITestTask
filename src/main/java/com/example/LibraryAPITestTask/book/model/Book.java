@@ -15,6 +15,7 @@ import java.util.List;
 @Builder
 @Setter
 @Getter
+@ToString
 public class Book {
 
     @Id
@@ -34,5 +35,6 @@ public class Book {
             joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "author_id", referencedColumnName = "author_id")
     )
+    @ToString.Exclude
     private List<Author> authors;
 }
