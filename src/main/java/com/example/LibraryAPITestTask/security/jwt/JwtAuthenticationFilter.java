@@ -36,14 +36,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         } catch (ExpiredTokenException e) {
-            // Обработка истекшего токена
+
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("Срок действия токена истек");
+            response.getWriter().write("Token expires");
             return;
         } catch (InvalidTokenException e) {
-            // Обработка недействительного токена
+
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            response.getWriter().write("Токен недействителен");
+                response.getWriter().write("Token is invalid");
             return;
         }
 
