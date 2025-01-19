@@ -9,6 +9,7 @@ import com.example.LibraryAPITestTask.transaction.dto.TransactionBookRequestDto;
 import com.example.LibraryAPITestTask.transaction.mapper.TransactionMapperManager;
 import com.example.LibraryAPITestTask.transaction.model.TypeOperation;
 import com.example.LibraryAPITestTask.transaction.repository.TransactionRepository;
+import com.example.LibraryAPITestTask.utils.EntityValidator;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,16 +25,16 @@ public class TransactionServiceImpl implements TransactionService {
 
     private final TransactionRepository transactionRepository;
     private final TransactionMapperManager mapper;
-
+    private final EntityValidator entityValidator;
     private final ReaderBooksService readerBooksService;
 
     @Override
     @Transactional
-    public void transaction(TransactionBookRequestDto dto, TypeOperation typeOperation) {
+    public void transaction(TransactionBookRequestDto dto) {
+        entityValidator.validate(dto.getReaderId(), dto.getBookId());
         com.example.LibraryAPITestTask.transaction.model.Transactional transactional = mapper.toDto(dto);
-        transactional.setTypeOperation(typeOperation);
         ReaderAndBook readerAndBook = readerBooksService.build(transactional.getReader(), transactional.getBook());
-        processReaderBookOperation(typeOperation, readerAndBook);
+        processReaderBookOperation(dto.getTypeOperation(), readerAndBook);
         transactionRepository.save(transactional);
     }
 

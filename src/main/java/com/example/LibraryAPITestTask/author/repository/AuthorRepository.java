@@ -21,6 +21,6 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
         ORDER BY COUNT(t.transactional_id) DESC
         LIMIT 1
         """, nativeQuery = true)
-    Author findByTopAuthor(@Param("from") LocalDateTime f
+    Author findTopAuthor(@Param("from") LocalDateTime f
             , @Param("to") LocalDateTime to );
 }

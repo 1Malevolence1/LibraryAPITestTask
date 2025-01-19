@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface TransactionService {
 
-    void transaction(TransactionBookRequestDto dto, TypeOperation typeOperation);
+    void transaction(TransactionBookRequestDto dto);
 
 }

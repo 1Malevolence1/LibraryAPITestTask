@@ -1,5 +1,6 @@
 package com.example.LibraryAPITestTask.transaction.dto;
 
+import com.example.LibraryAPITestTask.transaction.model.TypeOperation;
 import lombok.*;
 
 /**
@@ -15,4 +16,5 @@ public class TransactionBookRequestDto {
 
     private Long readerId;
     private Long bookId;
+    private TypeOperation typeOperation;
 }

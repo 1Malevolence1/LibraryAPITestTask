@@ -21,7 +21,7 @@ public class AuthorServiceImpl implements AuthorService {
     @Override
     public AuthorResponseDto getTopAuthorBetweenTime(LocalDateTime from, LocalDateTime to) {
         return authorMapper.toAuthorResponseDto(
-                authorRepository.findByTopAuthor(from, to)
+                authorRepository.findTopAuthor(from, to)
 
         );
     }

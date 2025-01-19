@@ -13,5 +13,6 @@ public interface TransactionMapper {
 
     @Mapping(target = "reader", source = "readerId")
     @Mapping(target = "book", source = "bookId")
+    @Mapping(target = "typeOperation", source = "typeOperation")
     Transactional toModel(TransactionBookRequestDto dto);
 }
