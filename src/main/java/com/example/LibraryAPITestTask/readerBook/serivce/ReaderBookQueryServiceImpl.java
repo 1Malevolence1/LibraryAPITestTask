@@ -1,8 +1,7 @@
 package com.example.LibraryAPITestTask.readerBook.serivce;
 
-import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
-import com.example.LibraryAPITestTask.reader.mapper.ReaderMapperManager;
 import com.example.LibraryAPITestTask.readerBook.repository.ReaderBookRepository;
+import com.example.LibraryAPITestTask.transaction.controller.ReaderWithBookCount;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -15,16 +14,15 @@ import java.util.List;
 public class ReaderBookQueryServiceImpl implements ReaderBookQueryService {
 
 
-    private final ReaderMapperManager readerMapperManager;
     private final ReaderBookRepository repository;
     @Override
-    public List<ReaderResponseDto> getTopReader() {
-        return readerMapperManager.toDto(repository.findByTopReader());
+    public List<ReaderWithBookCount> getTopReader() {
+        return (repository.findByTopReader());
     }
 
     @Override
-    public List<ReaderResponseDto> getReadersNotReturnBooks() {
-        return readerMapperManager.toDto(repository.findAllReadersOrderByNotReturnedBooksDesc());
+    public List<ReaderWithBookCount> getReadersNotReturnBooks() {
+        return repository.findAllReadersOrderByNotReturnedBooksDesc();
     }
 
 }

@@ -3,7 +3,7 @@ package com.example.LibraryAPITestTask.analytics.controller;
 
 import com.example.LibraryAPITestTask.analytics.serivce.AnalyticService;
 import com.example.LibraryAPITestTask.author.dto.AuthorResponseDto;
-import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
+import com.example.LibraryAPITestTask.transaction.controller.ReaderWithBookCount;
 import com.example.LibraryAPITestTask.transaction.exception.Validate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +26,7 @@ public class AnalyticsRestController {
 
 
     @GetMapping("/top-reader")
-    public ResponseEntity<List<ReaderResponseDto>> getTopReader() {
+    public ResponseEntity<List<ReaderWithBookCount>> getTopReader() {
         log.info("start methode <<topReader>>");
         return ResponseEntity.ok(analyticService.getTopReader());
     }
@@ -40,7 +40,7 @@ public class AnalyticsRestController {
     }
 
     @GetMapping("/not-return-book")
-    public ResponseEntity<List<ReaderResponseDto>>  getReaderNotReturnBook() {
+    public ResponseEntity<List<ReaderWithBookCount>>  getReaderNotReturnBook() {
         log.info("start methode <<notReturnBook>>");
         return ResponseEntity.ok(analyticService.getReaderNotReturnBook());
     }

@@ -2,9 +2,8 @@ package com.example.LibraryAPITestTask.analytics.serivce;
 
 import com.example.LibraryAPITestTask.author.dto.AuthorResponseDto;
 import com.example.LibraryAPITestTask.author.service.AuthorService;
-import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
-import com.example.LibraryAPITestTask.readerBook.serivce.ReaderBookOperationService;
 import com.example.LibraryAPITestTask.readerBook.serivce.ReaderBookQueryService;
+import com.example.LibraryAPITestTask.transaction.controller.ReaderWithBookCount;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,12 +21,12 @@ public class AnalyticServiceImpl implements AnalyticService {
     private final AuthorService authorService;
 
     @Override
-    public List<ReaderResponseDto> getTopReader() {
+    public List<ReaderWithBookCount> getTopReader() {
        return readerBooksService.getTopReader();
     }
 
     @Override
-    public List<ReaderResponseDto> getReaderNotReturnBook() {
+    public List<ReaderWithBookCount> getReaderNotReturnBook() {
         return readerBooksService.getReadersNotReturnBooks();
     }
 

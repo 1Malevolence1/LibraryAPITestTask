@@ -1,11 +1,11 @@
 package com.example.LibraryAPITestTask.readerBook.serivce;
 
-import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
+import com.example.LibraryAPITestTask.transaction.controller.ReaderWithBookCount;
 
 import java.util.List;
 
 public interface ReaderBookQueryService {
 
-    List<ReaderResponseDto> getTopReader();
-    List<ReaderResponseDto> getReadersNotReturnBooks();
+    List<ReaderWithBookCount> getTopReader();
+    List<ReaderWithBookCount> getReadersNotReturnBooks();
 }

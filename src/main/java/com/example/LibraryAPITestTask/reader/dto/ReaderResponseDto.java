@@ -9,4 +9,6 @@ import java.time.LocalDate;
  */
 public record ReaderResponseDto(Long id, String phone, String name, String surname, GenderType gender,
                                 LocalDate dateOfBirth) {
+
+
 }

@@ -22,7 +22,7 @@ create table if not exists reader (
     reader_phone varchar(255) not null unique,
     reader_name varchar(255) not null,
     reader_surname varchar(255) not null,
-    reader_gender varchar(1) not null check (reader_gender in ('M', 'W')),
+    reader_gender varchar(10) not null check (reader_gender in ('M', 'W')),
     reader_date_of_birth date
 );
 

@@ -1,16 +1,16 @@
 package com.example.LibraryAPITestTask.analytics.serivce;
 
 import com.example.LibraryAPITestTask.author.dto.AuthorResponseDto;
-import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
+import com.example.LibraryAPITestTask.transaction.controller.ReaderWithBookCount;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 public interface AnalyticService {
 
-    List<ReaderResponseDto> getTopReader();
+    List<ReaderWithBookCount> getTopReader();
 
-    List<ReaderResponseDto> getReaderNotReturnBook();
+    List<ReaderWithBookCount> getReaderNotReturnBook();
 
     AuthorResponseDto getTopAuthor(LocalDateTime from, LocalDateTime to);
 }
