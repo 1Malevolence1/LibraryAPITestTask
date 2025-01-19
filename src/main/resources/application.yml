@@ -1,0 +1,18 @@
+spring:
+    application:
+        name: LibraryAPITestTask
+
+    datasource:
+        url: jdbc:postgresql://localhost:5433/libraryApi
+        username: admin
+        password: admin
+    jpa:
+        show-sql: true
+    sql:
+        init:
+            schema-locations: classpath:/database/schema.sql
+            data-locations: classpath:database/data.sql
+            mode: always
+
+server:
+    port: 8090
