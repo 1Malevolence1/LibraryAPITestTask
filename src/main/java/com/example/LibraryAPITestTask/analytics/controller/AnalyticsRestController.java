@@ -1,7 +1,7 @@
 package com.example.LibraryAPITestTask.analytics.controller;
 
 
-import com.example.LibraryAPITestTask.analytics.dto.TopReaderResponseDto;
+import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
 import com.example.LibraryAPITestTask.analytics.serivce.AnalyticService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,8 +21,14 @@ public class AnalyticsRestController {
     private final AnalyticService analyticService;
 
     @GetMapping("/top-reader")
-    public ResponseEntity<List<TopReaderResponseDto>> topReader(){
+    public ResponseEntity<List<ReaderResponseDto>> topReader() {
         log.info("start methode <<topReader>>");
         return ResponseEntity.ok(analyticService.getReaderTopReader());
+    }
+
+    @GetMapping("/not-return-book")
+    public ResponseEntity<List<ReaderResponseDto>> notReturnBook() {
+        log.info("start methode <<notReturnBook>>");
+        return ResponseEntity.ok(analyticService.getReaderNotReturnBook());
     }
 }

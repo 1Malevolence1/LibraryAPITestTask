@@ -1,7 +1,7 @@
 package com.example.LibraryAPITestTask.reader.mapper;
 
 
-import com.example.LibraryAPITestTask.analytics.dto.TopReaderResponseDto;
+import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
 import com.example.LibraryAPITestTask.reader.model.Reader;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -12,7 +12,7 @@ public interface ReaderMapper {
     @Mapping(target = "id", source = "readerId")
     Reader toDto(Long readerId);
 
-    Reader toEntity(TopReaderResponseDto topReaderResponseDto);
+    Reader toEntity(ReaderResponseDto readerResponseDto);
 
-    TopReaderResponseDto toTopReaderResponseDto(Reader reader);
+    ReaderResponseDto toTopReaderResponseDto(Reader reader);
 }

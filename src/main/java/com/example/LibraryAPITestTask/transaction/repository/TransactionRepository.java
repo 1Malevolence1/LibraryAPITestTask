@@ -31,4 +31,9 @@ public interface TransactionRepository extends JpaRepository<Transactional, Long
     )
     """, nativeQuery = true)
     List<Reader> findByTopReader();
+
+
+    @Query(value = "select r.* from transactional as t join reader as r \n" +
+            "using (reader_id) where  t.transactional_type_operation = 'TAKE' group by r.reader_id", nativeQuery = true)
+    List<Reader> findAllReaderNotReturnBooks();
 }

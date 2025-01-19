@@ -1,8 +1,8 @@
 package com.example.LibraryAPITestTask.transaction.service;
 
 
-import com.example.LibraryAPITestTask.analytics.dto.TopReaderResponseDto;
-import com.example.LibraryAPITestTask.reader.model.Reader;
+import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
+import com.example.LibraryAPITestTask.reader.mapper.ReaderMapperManager;
 import com.example.LibraryAPITestTask.transaction.controller.TransactionBookRequestDto;
 import com.example.LibraryAPITestTask.transaction.mapper.TransactionMapperManager;
 import com.example.LibraryAPITestTask.transaction.model.TypeOperation;
@@ -22,6 +22,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     private final TransactionRepository transactionRepository;
     private final TransactionMapperManager mapper;
+    private final ReaderMapperManager readerMapperManager;
 
     @Override
     @Transactional
@@ -32,7 +33,12 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public List<Reader> getTopReader() {
-        return transactionRepository.findByTopReader();
+    public List<ReaderResponseDto> getTopReader() {
+        return readerMapperManager.toDto(transactionRepository.findByTopReader());
+    }
+
+    @Override
+    public List<ReaderResponseDto> getReadersNotReturnBooks() {
+        return readerMapperManager.toDto(transactionRepository.findAllReaderNotReturnBooks());
     }
 }
