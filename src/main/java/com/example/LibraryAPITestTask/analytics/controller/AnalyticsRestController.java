@@ -1,8 +1,8 @@
 package com.example.LibraryAPITestTask.analytics.controller;
 
 
-import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
 import com.example.LibraryAPITestTask.analytics.serivce.AnalyticService;
+import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +27,7 @@ public class AnalyticsRestController {
     }
 
     @GetMapping("/not-return-book")
-    public ResponseEntity<List<ReaderResponseDto>> notReturnBook() {
+    public ResponseEntity<List<ReaderResponseDto>>  notReturnBook() {
         log.info("start methode <<notReturnBook>>");
         return ResponseEntity.ok(analyticService.getReaderNotReturnBook());
     }

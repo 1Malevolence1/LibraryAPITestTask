@@ -1,7 +1,7 @@
 package com.example.LibraryAPITestTask.transaction.controller;
 
 
-import com.example.LibraryAPITestTask.transaction.mapper.TransactionMapper;
+import com.example.LibraryAPITestTask.transaction.dto.TransactionBookRequestDto;
 import com.example.LibraryAPITestTask.transaction.model.TypeOperation;
 import com.example.LibraryAPITestTask.transaction.service.TransactionService;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 public class RestTransactionController {
 
     private final TransactionService transactionService;
-    private final TransactionMapper mapper;
 
     @PostMapping("book")
     public ResponseEntity<Void> transaction(@RequestBody TransactionBookRequestDto dto,

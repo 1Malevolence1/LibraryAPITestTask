@@ -1,7 +1,7 @@
 package com.example.LibraryAPITestTask.analytics.serivce;
 
 import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
-import com.example.LibraryAPITestTask.transaction.service.TransactionService;
+import com.example.LibraryAPITestTask.readerBook.ReaderBooksService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -14,15 +14,15 @@ import java.util.List;
 @Slf4j
 public class AnalyticServiceImpl implements AnalyticService {
 
-    private final TransactionService transactionService;
+    private final ReaderBooksService readerBooksService;
 
     @Override
     public List<ReaderResponseDto> getReaderTopReader() {
-       return transactionService.getTopReader();
+       return readerBooksService.getTopReader();
     }
 
     @Override
     public List<ReaderResponseDto> getReaderNotReturnBook() {
-        return transactionService.getReadersNotReturnBooks();
+        return readerBooksService.getReadersNotReturnBooks();
     }
 }

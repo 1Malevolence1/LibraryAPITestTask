@@ -33,3 +33,10 @@ create table if not exists transactional (
     reader_id bigint references reader(reader_id) on delete cascade,
     book_id bigint references book(book_id) on delete cascade
 );
+
+-- промежуточная таблица
+CREATE TABLE IF NOT EXISTS reader_books (
+    reader_id BIGINT REFERENCES reader(reader_id) ON DELETE CASCADE,
+    book_id BIGINT REFERENCES book(book_id) ON DELETE CASCADE,
+    PRIMARY KEY (reader_id, book_id)
+);
