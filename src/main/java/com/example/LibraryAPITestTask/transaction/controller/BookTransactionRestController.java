@@ -1,19 +1,16 @@
 package com.example.LibraryAPITestTask.transaction.controller;
 
 
-import com.example.LibraryAPITestTask.readerBook.repository.ReaderBookRepository;
 import com.example.LibraryAPITestTask.transaction.dto.TransactionBookRequestDto;
 import com.example.LibraryAPITestTask.transaction.exception.Validate;
-import com.example.LibraryAPITestTask.transaction.repository.TransactionRepository;
 import com.example.LibraryAPITestTask.transaction.service.TransactionService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import org.w3c.dom.stylesheets.LinkStyle;
 
-import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
@@ -25,7 +22,7 @@ public class BookTransactionRestController {
     private final TransactionService transactionService;
 
 
-
+    @PreAuthorize("isAuthenticated()")
     @PostMapping("book")
     public ResponseEntity<Void> transaction(@RequestBody TransactionBookRequestDto dto){
         log.info("start method <<transaction>>. Dto: {}", dto);
@@ -33,7 +30,6 @@ public class BookTransactionRestController {
         log.info("methode complete");
         return ResponseEntity.noContent().build();
     }
-
 
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<Validate> handlerNoSuchElementException(NoSuchElementException e){

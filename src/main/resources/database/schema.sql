@@ -1,3 +1,5 @@
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
 create table if not exists author (
     author_id bigserial primary key,
     author_name varchar(255) not null,
@@ -39,4 +41,10 @@ CREATE TABLE IF NOT EXISTS reader_books (
     reader_id BIGINT REFERENCES reader(reader_id) ON DELETE CASCADE,
     book_id BIGINT REFERENCES book(book_id) ON DELETE CASCADE,
     PRIMARY KEY (reader_id, book_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.employee (
+    employee_id bigserial primary key,
+    employee_email varchar(255) not null unique,
+    employee_password text not null
 );
