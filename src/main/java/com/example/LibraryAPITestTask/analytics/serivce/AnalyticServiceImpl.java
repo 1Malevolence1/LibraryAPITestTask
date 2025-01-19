@@ -1,11 +1,14 @@
 package com.example.LibraryAPITestTask.analytics.serivce;
 
+import com.example.LibraryAPITestTask.author.dto.AuthorResponseDto;
+import com.example.LibraryAPITestTask.author.service.AuthorService;
 import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
 import com.example.LibraryAPITestTask.readerBook.ReaderBooksService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -15,6 +18,7 @@ import java.util.List;
 public class AnalyticServiceImpl implements AnalyticService {
 
     private final ReaderBooksService readerBooksService;
+    private final AuthorService authorService;
 
     @Override
     public List<ReaderResponseDto> getReaderTopReader() {
@@ -24,5 +28,10 @@ public class AnalyticServiceImpl implements AnalyticService {
     @Override
     public List<ReaderResponseDto> getReaderNotReturnBook() {
         return readerBooksService.getReadersNotReturnBooks();
+    }
+
+    @Override
+    public AuthorResponseDto getTopAuthor(LocalDateTime from, LocalDateTime to) {
+        return authorService.getTopAuthorBetweenTime(from, to);
     }
 }
