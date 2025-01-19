@@ -1,6 +1,8 @@
 package com.example.LibraryAPITestTask.transaction.service;
 
 
+import com.example.LibraryAPITestTask.analytics.dto.TopReaderResponseDto;
+import com.example.LibraryAPITestTask.reader.model.Reader;
 import com.example.LibraryAPITestTask.transaction.controller.TransactionBookRequestDto;
 import com.example.LibraryAPITestTask.transaction.mapper.TransactionMapperManager;
 import com.example.LibraryAPITestTask.transaction.model.TypeOperation;
@@ -9,6 +11,8 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -25,5 +29,10 @@ public class TransactionServiceImpl implements TransactionService {
         com.example.LibraryAPITestTask.transaction.model.Transactional transactional = mapper.toDto(dto);
         transactional.setTypeOperation(typeOperation);
         transactionRepository.save(transactional);
+    }
+
+    @Override
+    public List<Reader> getTopReader() {
+        return transactionRepository.findByTopReader();
     }
 }
