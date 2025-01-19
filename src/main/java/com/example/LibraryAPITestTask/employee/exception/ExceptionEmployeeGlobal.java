@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.NoSuchElementException;
 
 @RestControllerAdvice
-public class ExceptionEmployeeGlobal {
+public class  ExceptionEmployeeGlobal {
 
 
     @ExceptionHandler(NoSuchElementException.class)
