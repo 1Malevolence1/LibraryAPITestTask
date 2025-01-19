@@ -27,7 +27,14 @@ insert into transactional (transactional_id, transactional_type_operation, reade
     (3, 'RETURN', 1, 1)
 on conflict (transactional_id) do nothing;
 
+
+INSERT INTO employee (employee_id, employee_email, employee_password) VALUES
+    (1, 'admin', crypt('admin', gen_salt('bf')))
+ON CONFLICT (employee_id) DO NOTHING;
+
+
 select setval('author_author_id_seq', (select max(author_id) from author));
 select setval('book_book_id_seq', (select max(book_id) from book));
 select setval('reader_reader_id_seq', (select max(reader_id) from reader));
 select setval('transactional_transactional_id_seq', (select max(transactional_id) from transactional));
+SELECT setval('employee_employee_id_seq', (SELECT MAX(employee_id) FROM public.employee));
