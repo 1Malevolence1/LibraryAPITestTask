@@ -3,9 +3,9 @@ package com.example.LibraryAPITestTask.readerBook.serivce;
 
 import com.example.LibraryAPITestTask.book.model.Book;
 import com.example.LibraryAPITestTask.reader.model.Reader;
-import com.example.LibraryAPITestTask.readerBook.ReaderAndBook;
-import com.example.LibraryAPITestTask.readerBook.ReaderBookRepository;
-import com.example.LibraryAPITestTask.readerBook.ReaderBooksIds;
+import com.example.LibraryAPITestTask.readerBook.model.ReaderAndBook;
+import com.example.LibraryAPITestTask.readerBook.repository.ReaderBookRepository;
+import com.example.LibraryAPITestTask.readerBook.model.ReaderBooksIds;
 import com.example.LibraryAPITestTask.transaction.model.TypeOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

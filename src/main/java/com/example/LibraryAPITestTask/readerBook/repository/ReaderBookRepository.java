@@ -1,6 +1,8 @@
-package com.example.LibraryAPITestTask.readerBook;
+package com.example.LibraryAPITestTask.readerBook.repository;
 
 import com.example.LibraryAPITestTask.reader.model.Reader;
+import com.example.LibraryAPITestTask.readerBook.model.ReaderAndBook;
+import com.example.LibraryAPITestTask.readerBook.model.ReaderBooksIds;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

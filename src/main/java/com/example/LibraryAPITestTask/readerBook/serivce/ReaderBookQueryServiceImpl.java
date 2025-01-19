@@ -2,7 +2,7 @@ package com.example.LibraryAPITestTask.readerBook.serivce;
 
 import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
 import com.example.LibraryAPITestTask.reader.mapper.ReaderMapperManager;
-import com.example.LibraryAPITestTask.readerBook.ReaderBookRepository;
+import com.example.LibraryAPITestTask.readerBook.repository.ReaderBookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

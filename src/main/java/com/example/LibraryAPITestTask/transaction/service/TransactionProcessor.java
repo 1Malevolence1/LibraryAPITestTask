@@ -1,7 +1,7 @@
 package com.example.LibraryAPITestTask.transaction.service;
 
 
-import com.example.LibraryAPITestTask.readerBook.ReaderAndBook;
+import com.example.LibraryAPITestTask.readerBook.model.ReaderAndBook;
 import com.example.LibraryAPITestTask.readerBook.serivce.ReaderBookOperationService;
 import com.example.LibraryAPITestTask.transaction.dto.TransactionBookRequestDto;
 import com.example.LibraryAPITestTask.transaction.mapper.TransactionMapperManager;

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface AnalyticService {
 
-    List<ReaderResponseDto> getReaderTopReader();
+    List<ReaderResponseDto> getTopReader();
 
     List<ReaderResponseDto> getReaderNotReturnBook();
 

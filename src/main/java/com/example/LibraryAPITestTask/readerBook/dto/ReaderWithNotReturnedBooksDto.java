@@ -1,4 +1,4 @@
-package com.example.LibraryAPITestTask.readerBook;
+package com.example.LibraryAPITestTask.readerBook.dto;
 
 import com.example.LibraryAPITestTask.reader.model.GenderType;
 

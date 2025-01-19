@@ -1,12 +1,10 @@
 package com.example.LibraryAPITestTask.reader.model;
 
 
-import com.example.LibraryAPITestTask.book.model.Book;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.List;
 
 
 @Entity

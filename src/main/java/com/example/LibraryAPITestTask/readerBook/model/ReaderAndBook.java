@@ -1,4 +1,4 @@
-package com.example.LibraryAPITestTask.readerBook;
+package com.example.LibraryAPITestTask.readerBook.model;
 
 
 import com.example.LibraryAPITestTask.book.model.Book;

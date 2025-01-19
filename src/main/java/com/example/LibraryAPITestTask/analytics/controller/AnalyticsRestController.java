@@ -4,9 +4,12 @@ package com.example.LibraryAPITestTask.analytics.controller;
 import com.example.LibraryAPITestTask.analytics.serivce.AnalyticService;
 import com.example.LibraryAPITestTask.author.dto.AuthorResponseDto;
 import com.example.LibraryAPITestTask.reader.dto.ReaderResponseDto;
+import com.example.LibraryAPITestTask.transaction.exception.Validate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -25,13 +28,13 @@ public class AnalyticsRestController {
     @GetMapping("/top-reader")
     public ResponseEntity<List<ReaderResponseDto>> getTopReader() {
         log.info("start methode <<topReader>>");
-        return ResponseEntity.ok(analyticService.getReaderTopReader());
+        return ResponseEntity.ok(analyticService.getTopReader());
     }
 
 
     @GetMapping("/top-author")
-    public ResponseEntity<AuthorResponseDto> getTopReader(@RequestParam("from")LocalDateTime from,
-                                                      @RequestParam("to") LocalDateTime to) {
+    public ResponseEntity<AuthorResponseDto> getTopAuthor(@RequestParam("from")LocalDateTime from,
+                                                          @RequestParam("to") LocalDateTime to) {
         log.info("start methode <<topAuthor>>");
         return ResponseEntity.ok(analyticService.getTopAuthor(from, to));
     }
@@ -42,5 +45,10 @@ public class AnalyticsRestController {
         return ResponseEntity.ok(analyticService.getReaderNotReturnBook());
     }
 
+
+    @ExceptionHandler(MissingServletRequestParameterException .class)
+    public ResponseEntity<Validate> handlerMissingServletRequestParameterException(MissingServletRequestParameterException e){
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Validate(e.getMessage()));
+    }
 
 }
