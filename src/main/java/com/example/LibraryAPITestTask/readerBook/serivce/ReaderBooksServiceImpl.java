@@ -42,8 +42,8 @@ public class ReaderBooksServiceImpl implements ReaderBookOperationService {
 
     @Override
     public void processReaderBookOperation(TypeOperation typeOperation, ReaderAndBook readerAndBook) {
-        checkReaderPresenceOfBook.check(readerAndBook);
         if (typeOperation == TypeOperation.TAKE) {
+            checkReaderPresenceOfBook.check(readerAndBook);
             create(readerAndBook);
         } else if (typeOperation == TypeOperation.RETURN) {
             delete(readerAndBook);
