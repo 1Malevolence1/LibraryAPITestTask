@@ -52,20 +52,20 @@ INSERT INTO reader (reader_id, reader_phone, reader_name, reader_surname, reader
 ON CONFLICT (reader_id) DO NOTHING;
 
 
-INSERT INTO transactional (transactional_id, transactional_type_operation, reader_id, book_id) VALUES
-    (1, 'TAKE', 1, 1),
-    (2, 'TAKE', 2, 2),
-    (3, 'RETURN', 1, 1),
-    (4, 'TAKE', 3, 4),
-    (5, 'TAKE', 4, 5),
-    (6, 'TAKE', 5, 6),
-    (7, 'RETURN', 3, 4),
-    (8, 'TAKE', 6, 7),
-    (9, 'TAKE', 7, 8),
-    (10, 'RETURN', 5, 6),
-    (11, 'TAKE', 3, 9),
-    (12, 'TAKE', 4, 10),
-    (13, 'RETURN', 6, 7)
+INSERT INTO transactional (transactional_id, transactional_type_operation, reader_id, book_id, date_operation) VALUES
+    (1, 'TAKE', 1, 1, NOW() - INTERVAL '10 days'),
+    (2, 'TAKE', 2, 2, NOW() - INTERVAL '9 days'),
+    (3, 'RETURN', 1, 1, NOW() - INTERVAL '8 days'),
+    (4, 'TAKE', 3, 4, NOW() - INTERVAL '7 days'),
+    (5, 'TAKE', 4, 5, NOW() - INTERVAL '6 days'),
+    (6, 'TAKE', 5, 6, NOW() - INTERVAL '5 days'),
+    (7, 'RETURN', 3, 4, NOW() - INTERVAL '4 days'),
+    (8, 'TAKE', 6, 7, NOW() - INTERVAL '3 days'),
+    (9, 'TAKE', 7, 8, NOW() - INTERVAL '2 days'),
+    (10, 'RETURN', 5, 6, NOW() - INTERVAL '1 day'),
+    (11, 'TAKE', 3, 9, NOW() - INTERVAL '12 hours'),
+    (12, 'TAKE', 4, 10, NOW() - INTERVAL '6 hours'),
+    (13, 'RETURN', 6, 7, NOW())
 ON CONFLICT (transactional_id) DO NOTHING;
 
 
