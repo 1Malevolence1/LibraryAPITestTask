@@ -1,46 +1,25 @@
-#  Веб-приложение, реализованное для тестового заданя.
+# Getting Started
 
-## Запуск программы
+### Reference Documentation
+For further reference, please consider the following sections:
 
-Чтобы запустить программу, перейдите в корневую директорию проекта и выполните команду:
-- **docker-compose up -d**
+* [Official Gradle documentation](https://docs.gradle.org)
+* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/3.4.1/gradle-plugin)
+* [Create an OCI image](https://docs.spring.io/spring-boot/3.4.1/gradle-plugin/packaging-oci-image.html)
+* [Spring Web](https://docs.spring.io/spring-boot/3.4.1/reference/web/servlet.html)
+* [Spring Data JPA](https://docs.spring.io/spring-boot/3.4.1/reference/data/sql.html#data.sql.jpa-and-spring-data)
+* [Validation](https://docs.spring.io/spring-boot/3.4.1/reference/io/validation.html)
 
-Эта команда запустит все необходимое
+### Guides
+The following guides illustrate how to use some features concretely:
 
-После ввода команды нужно подождать.
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+* [Validation](https://spring.io/guides/gs/validating-form-input/)
 
-После успешного запуска приложение будет доступно по адресу:
-http://localhost:8090
+### Additional Links
+These additional references should also help you:
 
-## Документация API
-Для удобства тестирования и использования API, приложение интегрировано с Swagger.
-Документация доступна по адресу:
-http://localhost:8090/swagger-ui/index.html#/
-
-# Аккаунт
-| №  | Логин  | Пароль | 
-|----|--------|--------|
-| 1  | admin  | admin  | 
-
-
-
-## Стек технологий
-
-Приложение разработано с использованием следующих технологий и инструментов:
-
-### Основные технологии
-1. Java 21
-2. Spring Boot 3.4.1 
-3. Spring Security 
-4. Spring Data JPA
-5. SpringDoc OpenAPI 
-6. PostgreSQL 
-7. JWT 
-
-### Дополнительные библиотеки
-1. Lombok 
-2. MapStruct 
-3. Spring Validation 
-4. Gradle
-5. Docker
-5. Docker Compose 
+* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
