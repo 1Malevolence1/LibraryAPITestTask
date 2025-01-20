@@ -6,6 +6,7 @@ import com.example.LibraryAPITestTask.employee.service.CustomerUserDetailService
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -27,16 +28,14 @@ public class SecurityConfiguration {
     private final CustomerUserDetailService customerUserDetailsService;
 
     @Bean
-    public  SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests(
-                request -> request.requestMatchers("/api/auth/**").permitAll()
-                        .anyRequest().authenticated()
-
-        ).authenticationProvider(authenticationProvider())
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        return http.csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
+                        .requestMatchers("").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/analytics/not-return-book").permitAll()
+                        .anyRequest().authenticated()).authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
-
 
 
     @Bean
