@@ -1,10 +1,7 @@
 package com.example.LibraryAPITestTask.transaction.service;
 
 
-import com.example.LibraryAPITestTask.readerBook.exception.ReaderAlreadyHasBookException;
 import com.example.LibraryAPITestTask.transaction.dto.TransactionBookRequestDto;
-import com.example.LibraryAPITestTask.transaction.exception.TransactionServiceException;
-import com.example.LibraryAPITestTask.transaction.exception.Validate;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

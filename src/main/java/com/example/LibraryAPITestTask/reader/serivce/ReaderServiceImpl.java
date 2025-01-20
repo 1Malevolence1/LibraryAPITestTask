@@ -1,12 +1,9 @@
 package com.example.LibraryAPITestTask.reader.serivce;
 
-import com.example.LibraryAPITestTask.reader.model.Reader;
 import com.example.LibraryAPITestTask.reader.repository.ReaderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 
 @Service
