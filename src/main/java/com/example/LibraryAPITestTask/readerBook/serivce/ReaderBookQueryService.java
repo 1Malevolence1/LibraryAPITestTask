@@ -1,6 +1,6 @@
 package com.example.LibraryAPITestTask.readerBook.serivce;
 
-import com.example.LibraryAPITestTask.transaction.controller.ReaderWithBookCount;
+import com.example.LibraryAPITestTask.reader.dto.ReaderWithBookCount;
 
 import java.util.List;
 

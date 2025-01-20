@@ -2,7 +2,7 @@ package com.example.LibraryAPITestTask.readerBook.repository;
 
 import com.example.LibraryAPITestTask.readerBook.model.ReaderAndBook;
 import com.example.LibraryAPITestTask.readerBook.model.ReaderBooksIds;
-import com.example.LibraryAPITestTask.transaction.controller.ReaderWithBookCount;
+import com.example.LibraryAPITestTask.reader.dto.ReaderWithBookCount;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

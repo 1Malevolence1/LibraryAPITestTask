@@ -1,8 +1,6 @@
-package com.example.LibraryAPITestTask.transaction.controller;
+package com.example.LibraryAPITestTask.reader.dto;
 
 import com.example.LibraryAPITestTask.reader.model.GenderType;
-import com.example.LibraryAPITestTask.reader.model.Reader;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

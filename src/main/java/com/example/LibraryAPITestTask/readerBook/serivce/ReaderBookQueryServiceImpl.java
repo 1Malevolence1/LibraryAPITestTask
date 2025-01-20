@@ -1,7 +1,7 @@
 package com.example.LibraryAPITestTask.readerBook.serivce;
 
 import com.example.LibraryAPITestTask.readerBook.repository.ReaderBookRepository;
-import com.example.LibraryAPITestTask.transaction.controller.ReaderWithBookCount;
+import com.example.LibraryAPITestTask.reader.dto.ReaderWithBookCount;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

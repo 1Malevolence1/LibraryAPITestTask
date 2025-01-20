@@ -1,7 +1,7 @@
 package com.example.LibraryAPITestTask.analytics.serivce;
 
 import com.example.LibraryAPITestTask.author.dto.AuthorResponseDto;
-import com.example.LibraryAPITestTask.transaction.controller.ReaderWithBookCount;
+import com.example.LibraryAPITestTask.reader.dto.ReaderWithBookCount;
 
 import java.time.LocalDateTime;
 import java.util.List;

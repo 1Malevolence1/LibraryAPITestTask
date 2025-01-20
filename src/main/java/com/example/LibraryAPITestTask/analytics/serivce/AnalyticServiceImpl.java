@@ -3,7 +3,7 @@ package com.example.LibraryAPITestTask.analytics.serivce;
 import com.example.LibraryAPITestTask.author.dto.AuthorResponseDto;
 import com.example.LibraryAPITestTask.author.service.AuthorService;
 import com.example.LibraryAPITestTask.readerBook.serivce.ReaderBookQueryService;
-import com.example.LibraryAPITestTask.transaction.controller.ReaderWithBookCount;
+import com.example.LibraryAPITestTask.reader.dto.ReaderWithBookCount;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
