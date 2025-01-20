@@ -9,3 +9,16 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: libraryApi
 
+  service:
+    restart: unless-stopped
+    build:
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/libraryApi
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin
+    ports:
+      - "8090:8090"
+    depends_on:
+      - database
+
