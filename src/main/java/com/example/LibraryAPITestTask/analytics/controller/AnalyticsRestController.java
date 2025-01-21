@@ -67,7 +67,4 @@ public class AnalyticsRestController {
         log.info("start methode <<notReturnBook>>");
         return ResponseEntity.ok(analyticService.getReaderNotReturnBook());
     }
-
-
-
 }
